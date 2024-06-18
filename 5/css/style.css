@@ -16,7 +16,7 @@
   font-family: "Oswald";
   font-weight: 400;
   font-style: normal;
-  src: url("../../fonts/oswald/oswaldregular.woff2") format("woff2");
+  src: url("../fonts/oswald/oswaldregular.woff2") format("woff2");
   font-display: swap;
 }
 body {
@@ -133,11 +133,13 @@ body {
 }
 @media (min-width: 1440px) {
   .main {
-    padding-bottom: 74px;
+    padding-top: 74px;
   }
 }
-.main--page {
-  padding-top: 110px;
+@media (min-width: 1440px) {
+  .main--page {
+    padding-top: 110px;
+  }
 }
 .logo-icon__container {
   margin-right: 56px;
