@@ -14,26 +14,109 @@
 }
 
 .programm__title {
+  position: relative;
   .font-parameters(@color-black; 24px; 37px;);
   .margin-padding(0 0 29px; 0 0 0 70px;);
   font-weight: 400;
   text-transform: uppercase;
 
+
+  &--slim::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/programm-tablet-slim-icon.svg");
+    transform: scale(0.26);
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 194px;
+    z-index: 2;
+    left: -45px;
+    top: -80px;
+  }
+
+  &--gain::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/programm-tablet-gain-icon.svg");
+    background-repeat: no-repeat;
+    transform: scale(0.25);
+    width: 268px;
+    height: 112px;
+    z-index: 2;
+    right: 82px;
+    top: -38px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: @color-green;
+    left: 0;
+    top: -5px;
+  }
+
   @media (min-width: @tablet-width) {
     .font-parameters(@color-black; 36px; 36px;);
     .margin-padding(0 0 24px; 0;);
+
+    &--slim::after {
+      transform: scale(1);
+      left: auto;
+      right: 20px;
+      top: 0;
+    }
+
+    &--gain::after {
+      transform: scale(1);
+      left: auto;
+      right: -34px;
+      top: 54px;
+    }
+
+    &::before {
+      width: 200px;
+      height: 200px;
+      left: auto;
+      right: 0;
+      top: 0;
+    }
   }
 
   @media (min-width: @desktop-width) {
     .margin-padding(0 0 73px; 0 0 0 162px;);
+
+    &::before {
+      width: 100px;
+      height: 100px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--slim::after {
+      transform: scale(0.5);
+      left: -18px;
+      top: -85px;
+    }
+
+    &--gain::after {
+      transform: scale(0.5);
+      left: -85px;
+      top: -36px;
+    }
   }
 }
 
 .programm__description {
   .font-family("Lato", sans-serif;);
-  .margin-padding(0 0 40px; 0;);
+  .margin-padding(0 0 15px; 0 0 23px;);
+  border-bottom: 1px solid @color-header-border-grey;
 
   @media (min-width: @tablet-width) {
+    border: none;
     max-width: 342px;
     .font-parameters(@color-black; 16px; 24px;);
     .margin-padding(0 0 48px; 0;);

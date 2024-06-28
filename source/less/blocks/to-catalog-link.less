@@ -3,6 +3,17 @@
   text-decoration: none;
   text-transform: uppercase;
   padding: 4px 47px 4px 0;
+  background-image: url("../img/programm-link-arrow-icon.svg");
+  background-position: center right;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url("../img/programm-link-arrow-icon-hover.svg");
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media (min-width: @tablet-width) {
     .font-parameters(@color-black; 20px; 30px;);

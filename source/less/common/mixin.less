@@ -41,6 +41,11 @@
   line-height: @line-height;
 }
 
+.font-size(@font-size; @line-height;) {
+  font-size: @font-size;
+  line-height: @line-height;
+}
+
 .container() {
   margin: 0 auto;
   padding: 0 20px;
@@ -77,9 +82,7 @@
 
 .form-control-appearancestyle() {
   border: none;
-  font-size: inherit;
   font-family: inherit;
-  line-height: inherit;
   text-transform: uppercase;
   padding: 14px 15px 13px;
   outline: 1px solid @color-input-border;
@@ -95,4 +98,24 @@
   @media (min-width: @desktop-width) {
     padding-top: 74px;
   }
+}
+
+.footer-icon-states {
+  &:hover {
+    color: @color-green;
+  }
+
+  &:active {
+    color: @color-green;
+    opacity: 0.3;
+  }
+}
+
+.show-more-card-icon {
+  content: "";
+  position: absolute;
+  background-color: @color-icon-show-more;
+  width: 30px;
+  top: 15px;
+  left: 50%;
 }

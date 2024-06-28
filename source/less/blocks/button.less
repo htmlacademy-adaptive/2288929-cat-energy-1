@@ -11,13 +11,28 @@
   place-items: center;
   border: none;
 
-  &--show-all {
-    color: @color-dark-grey-second;
-    background-color: @color-light-grey;
-  }
-
   &--promo {
     .font-parameters(@color-white; 20px; 26px;);
     min-height: 54px;
+  }
+
+  &:hover {
+    background-color: @color-green-hover;
+  }
+
+  &:active {
+    background-color: @color-green-hover;
+    color: fade(@color-white, 30%);
+  }
+
+  &--show-all {
+    color: @color-dark-grey-second;
+    background-color: @color-light-grey;
+
+    &:hover,
+    &:active {
+      color: @color-dark-grey-second;
+      background-color: @color-light-grey-second;
+    }
   }
 }

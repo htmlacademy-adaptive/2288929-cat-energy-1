@@ -10,6 +10,30 @@
   }
 }
 
+.promo__background-image-container {
+  position: absolute;
+  width: 100%;
+  height: 302px;
+  margin-top: -27px;
+  overflow: hidden;
+
+  @media (max-width: @mobile-only-width) {
+    background-image: url("../img/index-promo-cat.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 302px;
+      background-color: fade(@color-green, 85%);
+    }
+  }
+}
+
 .promo__container {
   .container();
   display: grid;
@@ -27,6 +51,7 @@
 }
 
 .promo__text-description {
+  z-index: 2;
   text-align: center;
 
   @media (min-width: @tablet-width) {
@@ -37,6 +62,7 @@
   }
 
   @media (min-width: @desktop-width) {
+    z-index: 4;
     grid-column: 1 / 4;
     grid-row: 2 / 3;
     .margin(0 0 52px;);
@@ -46,7 +72,7 @@
 
 .promo__headline {
   .margin-padding(0 0 25px; 0;);
-  .font-parameters(@color-black; 36px; 36px);
+  .font-parameters(@color-white; 36px; 36px);
   font-weight: 400;
 
   @media (min-width: @tablet-width) {
@@ -57,7 +83,7 @@
 
 .promo__catchphrase {
   .margin-padding(0 0 29px; 0);
-  .font-parameters(@color-black; 14px; 14px);
+  .font-parameters(@color-white; 14px; 14px);
   text-transform: uppercase;
   font-weight: 400;
 
@@ -72,6 +98,7 @@
 }
 
 .promo__product-photo-container {
+  z-index: 2;
   .margin-padding(0; 0 0 3px;);
 
   @media (min-width: @tablet-width) {
@@ -81,6 +108,7 @@
   }
 
   @media (min-width: @desktop-width) {
+    z-index: 4;
     margin-top: 0;
     min-height: 499px;
     min-width: 522px;
@@ -94,9 +122,11 @@
 }
 
 .promo__button {
+  z-index: 2;
   .margin-padding(0; 5px 5px;);
 
   @media (min-width: @tablet-width) {
+    z-index: 3;
     position: relative;
     max-width: 244px;
     margin-left: 90px;

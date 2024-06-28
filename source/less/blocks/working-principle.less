@@ -2,10 +2,12 @@
   .padding(0 0 49px;);
 
   @media (min-width: @tablet-width) {
+    border-bottom: 1px solid @color-light-grey-third;
     .padding(0 0 47px;);
   }
 
   @media (min-width: @desktop-width) {
+    border: none;
     .padding(0 0 69px;);
   }
 }
@@ -34,7 +36,8 @@
 }
 
 .working-principle__list {
-  .list-styles(none; 0; 0 0 49px;);
+  counter-reset: number 0;
+  .list-styles(none; 0; 0;);
   display: grid;
   gap: 24px;
 
@@ -51,13 +54,124 @@
   }
 }
 
-.working-principle__item {
+.working-principle__text {
+  position: relative;
   .font-family("Lato", sans-serif;);
   .margin-padding(0; 0 0 0 80px;);
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: @color-green;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--nutrition::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/how-work-icon-nutrition.svg");
+    width: 30px;
+    height: 32px;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+  }
+
+  &--form::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/how-work-icon-form.svg");
+    width: 30px;
+    height: 32px;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+  }
+
+  &--eating::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/how-work-icon-eating.svg");
+    width: 30px;
+    height: 32px;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+  }
+
+  &--result::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/how-work-icon-result.svg");
+    width: 30px;
+    height: 32px;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+  }
 
   @media (min-width: @tablet-width) {
     .font-parameters(@color-dark-grey-second; 16px; 24px;);
     min-height: 280px;
     .margin-padding(0; 151px 0 57px;);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background-color: @color-green;
+      left: 0;
+      top: 80px;
+      transform: translateY(-50%);
+    }
+
+    &--nutrition::after {
+      top: 80px;
+      left: 25px;
+      transform: translateY(-50%);
+    }
+
+    &--form::after {
+      top: 80px;
+      left: 25px;
+      transform: translateY(-50%);
+    }
+
+    &--eating::after {
+      top: 80px;
+      left: 25px;
+      transform: translateY(-50%);
+    }
+
+    &--result::after {
+      top: 80px;
+      left: 25px;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.working-principle__item {
+  position: relative;
+  counter-increment: number 1;
+
+  @media (min-width: @tablet-width) {
+    &::before {
+      content: counter(number);
+      position: absolute;
+      font-family: "Oswald", sans-serif;
+      .font-parameters(@color-light-grey; 280px; 280px;);
+      bottom: 0;
+      right: 0;
+    }
   }
 }

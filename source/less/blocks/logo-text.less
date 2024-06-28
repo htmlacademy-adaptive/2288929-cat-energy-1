@@ -1,1 +1,13 @@
-// Комментарий для исправления ошибки stylelint
+.logo-text img {
+  display: block;
+}
+
+.logo-text[href] img {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
